@@ -1,7 +1,10 @@
 const request = require('request')
 
+//Put here your api key to WeatherStack:
+const weatherStackApi = ""
+
 const forecast = (latitude, longitude, callback) => {
-    const url = `http://api.weatherstack.com/current?access_key=0b031489113de653c6db05cf98a002f2&query=${latitude},${longitude}`
+    const url = `http://api.weatherstack.com/current?access_key=${weatherStackApi}&query=${latitude},${longitude}`
 
     request({ url, json: true }, (error, { body }) => {
         if (error) {
